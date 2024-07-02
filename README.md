@@ -1,16 +1,26 @@
-# flutter_server_driven_ui
+# Flutter Server Driven UI
 
-A new Flutter project.
+## 개발환경 구성
 
-## Getting Started
+```bash
+# Git clone
+git clone https://github.com/yejun614/flutter_server_driven_ui.git
 
-This project is a starting point for a Flutter application.
+# 프로젝트 폴더로 이동
+cd sprint1_client
 
-A few resources to get you started if this is your first Flutter project:
+# Flutter 프로젝트 초기화
+flutter clean
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# 의존성 패키지 다운로드
+flutter pub get
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Code generate 실행
+dart run build_runner build --delete-conflicting-outputs
+```
+
+## 개발환경 실행
+
+```bash
+flutter run -d chrome
+```
