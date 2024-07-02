@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_server_driven_ui/di/di_setup.dart';
-import 'package:flutter_server_driven_ui/presentation/my-app/screen/my_app_screen.dart';
+import 'package:flutter_server_driven_ui/presentation/my_app/screen/my_app_screen.dart';
 import 'package:go_router/go_router.dart';
 
 final _router = GoRouter(
