@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_server_driven_ui/di/di_setup.dart';
 import 'package:flutter_server_driven_ui/presentation/my_app/screen/my_app_screen.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 
 final _router = GoRouter(
   routes: [
@@ -12,6 +13,7 @@ final _router = GoRouter(
 
 void main() {
   configureDependencies();
+  usePathUrlStrategy();
   runApp(
     const ProviderScope(
       child: App(),
