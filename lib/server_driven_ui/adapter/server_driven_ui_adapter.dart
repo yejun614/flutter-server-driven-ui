@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_server_driven_ui/datasource/response_model/server_driven_ui/screen_content.dart';
 import 'package:flutter_server_driven_ui/presentation/badge/component/badge_component.dart';
