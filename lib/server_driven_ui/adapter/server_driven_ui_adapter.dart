@@ -5,6 +5,7 @@ import 'package:flutter_server_driven_ui/presentation/plus_title/component/plus_
 import 'package:flutter_server_driven_ui/presentation/plus_title/model/plus_text_style.dart';
 import 'package:flutter_server_driven_ui/presentation/plus_title/model/plus_title_text.dart';
 import 'package:flutter_server_driven_ui/presentation/title/component/title_component.dart';
+import 'package:flutter_server_driven_ui/server_driven_ui/section_component_type.dart';
 
 // 서버에서 받은 데이터를 화면에 표시할 수 있는 위젯으로 변환
 class ServerDrivenUIAdapter {
@@ -12,8 +13,8 @@ class ServerDrivenUIAdapter {
     final List<Widget> serverDrivenWidgets = [];
 
     for (final content in contentList) {
-      switch (content.sectionComponentType.name) {
-        case 'TITLE':
+      switch (content.sectionComponentType) {
+        case SectionComponentType.title:
           serverDrivenWidgets.add(
             TitleComponent(
               title: content.section['title'] ?? '',
@@ -23,7 +24,7 @@ class ServerDrivenUIAdapter {
           );
           break;
 
-        case 'PLUS_TITLE':
+        case SectionComponentType.plusTitle:
           serverDrivenWidgets.add(
             PlusTitleComponent(
               titleText: PlusTitleText(
