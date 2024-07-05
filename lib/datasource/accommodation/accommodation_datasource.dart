@@ -13,7 +13,9 @@ class AccommodationDataSourceImpl implements AccommodationDataSource {
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == HttpStatus.ok) {
-      final body = utf8.decode(response.bodyBytes) as Map<String, dynamic>;
+      // FIXME:
+      // final body = utf8.decode(response.bodyBytes) as Map<String, dynamic>;
+      final body = jsonDecode(response.body);
       return ServerDrivenUIResponse.fromJson(body);
     } else {
       throw Exception('$url 응답 오류: ${response.statusCode}');

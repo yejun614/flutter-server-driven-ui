@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_server_driven_ui/datasource/response_model/server_driven_ui/screen_content.dart';
 import 'package:flutter_server_driven_ui/presentation/badge/component/badge_component.dart';
@@ -12,39 +14,51 @@ class ServerDrivenUIAdapter {
   static List<Widget> adapt(List<ScreenContent> contentList) {
     final List<Widget> serverDrivenWidgets = [];
 
-    for (final content in contentList) {
+    // for (final content in contentList) {
+    for (int index = 0; index < contentList.length; index++) {
+      final content = contentList[index];
+      print(content.section['badges']);
+
       switch (content.sectionComponentType) {
         case SectionComponentType.title:
+          // serverDrivenWidgets.add(
+          //   TitleComponent(
+          //     title: content.section['title'] ?? '',
+          //     badges: _adaptBadges(content.section['badges'] ?? []),
+          //     description: content.section['description'] ?? '',
+          //   ),
+          // );
           serverDrivenWidgets.add(
             TitleComponent(
               title: content.section['title'] ?? '',
               badges: _adaptBadges(content.section['badges'] ?? []),
-              description: content.section['description'] ?? '',
+              // description: content.section['description'] ?? '',
+              description: '',
             ),
           );
           break;
 
-        case SectionComponentType.plusTitle:
-          serverDrivenWidgets.add(
-            PlusTitleComponent(
-              titleText: PlusTitleText(
-                text: content.section['titleText']['text'] ?? '',
-                textSize: double.tryParse(
-                      content.section['titleText']['textSize'] ?? '30.0',
-                    ) ??
-                    30.0,
-                textColor: _parseHexColor(
-                  content.section['titleText']['textColor'] ?? '#000000',
-                ),
-                textStyle: _parseTextStyle(
-                  content.section['titleText']['textStyle'] ?? '',
-                ),
-              ),
-              badges: _adaptBadges(content.section['badges'] ?? []),
-              description: content.section['description'] ?? '',
-            ),
-          );
-          break;
+        // case SectionComponentType.plusTitle:
+        //   serverDrivenWidgets.add(
+        //     PlusTitleComponent(
+        //       titleText: PlusTitleText(
+        //         text: content.section['titleText']['text'] ?? '',
+        //         textSize: double.tryParse(
+        //               content.section['titleText']['textSize'] ?? '30.0',
+        //             ) ??
+        //             30.0,
+        //         textColor: _parseHexColor(
+        //           content.section['titleText']['textColor'] ?? '#000000',
+        //         ),
+        //         textStyle: _parseTextStyle(
+        //           content.section['titleText']['textStyle'] ?? '',
+        //         ),
+        //       ),
+        //       badges: _adaptBadges(content.section['badges'] ?? []),
+        //       description: content.section['description'] ?? '',
+        //     ),
+        //   );
+        //   break;
 
         default:
           print('Unknown component type: ${content.sectionComponentType.name}');
