@@ -22,7 +22,7 @@ class ServerDrivenComponent extends HookConsumerWidget {
     }, []);
 
     return Column(
-      children: [],
+      children: viewModel.children,
     );
   }
 }
