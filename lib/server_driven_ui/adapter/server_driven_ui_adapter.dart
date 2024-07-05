@@ -15,7 +15,6 @@ class ServerDrivenUIAdapter {
   static List<Widget> adapt(List<ScreenContent> contentList) {
     final List<Widget> serverDrivenWidgets = [];
 
-    // for (final content in contentList) {
     for (int index = 0; index < contentList.length; index++) {
       final content = contentList[index];
 
