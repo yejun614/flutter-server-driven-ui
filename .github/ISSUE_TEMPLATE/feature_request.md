@@ -1,20 +1,20 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
-title: ''
+name: 새로운 기능
+about: 새로운 기능을 추가
+title: 'feat: 기능에 대하여 간단히 작성'
 labels: ''
 assignees: ''
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+## 배경 소개
+기능 추가에 대한 배경을 소개
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+## 기능 설명
+기능의 필요성에 대해서 설명
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+## 요구사항
+기능의 요구사항을 상세히 명시
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+## 관련 자료
+기능과 관련된 자료 및 링크를 제시

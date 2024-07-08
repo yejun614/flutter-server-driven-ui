@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_server_driven_ui/presentation/my-app/component/my_app_viewmodel.dart';
+import 'package:flutter_server_driven_ui/presentation/my_app/component/my_app_viewmodel.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class MyAppComponent extends HookConsumerWidget {
