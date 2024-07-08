@@ -36,9 +36,14 @@ class ApiUrlComponent extends ConsumerWidget {
                       onPressed: () {
                         final url = _textEditingController.text;
                         // 이동한 화면에서 url로 받아서 쓰면 됩니다.
-                        context.go('/test', extra: {
-                          'url': url,
-                        });
+                        context.go(
+                          Uri(
+                            path: '/view',
+                            queryParameters: {
+                              "json": url,
+                            },
+                          ).toString(),
+                        );
                       },
                       child: const Text("Request"))
                 ],

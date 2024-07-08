@@ -3,6 +3,7 @@ import 'package:flutter_server_driven_ui/datasource/response_model/server_driven
 import 'package:flutter_server_driven_ui/presentation/badge/component/badge_component.dart';
 import 'package:flutter_server_driven_ui/presentation/plus_title/component/plus_title_component.dart';
 import 'package:flutter_server_driven_ui/presentation/plus_title/model/plus_text_style.dart';
+import 'package:flutter_server_driven_ui/presentation/plus_title/model/plus_title_image.dart';
 import 'package:flutter_server_driven_ui/presentation/plus_title/model/plus_title_text.dart';
 import 'package:flutter_server_driven_ui/presentation/title/component/title_component.dart';
 import 'package:flutter_server_driven_ui/server_driven_ui/section_component_type.dart';
@@ -12,7 +13,9 @@ class ServerDrivenUIAdapter {
   static List<Widget> adapt(List<ScreenContent> contentList) {
     final List<Widget> serverDrivenWidgets = [];
 
-    for (final content in contentList) {
+    for (int index = 0; index < contentList.length; index++) {
+      final content = contentList[index];
+
       switch (content.sectionComponentType) {
         case SectionComponentType.title:
           serverDrivenWidgets.add(
@@ -27,6 +30,15 @@ class ServerDrivenUIAdapter {
         case SectionComponentType.plusTitle:
           serverDrivenWidgets.add(
             PlusTitleComponent(
+              firstRowImage: PlusTitleImage(
+                imgUrl: content.section['firstRowImage']['imgUrl'] ?? '',
+                width: double.tryParse(
+                        content.section['firstRowImage']['width'] ?? '120') ??
+                    120.0,
+                height: double.tryParse(
+                        content.section['firstRowImage']['height'] ?? '30') ??
+                    30.0,
+              ),
               titleText: PlusTitleText(
                 text: content.section['titleText']['text'] ?? '',
                 textSize: double.tryParse(
@@ -56,13 +68,21 @@ class ServerDrivenUIAdapter {
   }
 
   // 뱃지 목록은 Map<String, dynamic> 형태로 주어지므로 이를 List<BadgeComponent>로 변환
-  static List<BadgeComponent> _adaptBadges(List<Map<String, dynamic>> badges) {
-    return badges.map((badge) {
-      return BadgeComponent(
-        src: badge['badgeImage'] ?? '',
-        text: badge['text'] ?? '',
+  static List<BadgeComponent> _adaptBadges(List<dynamic> badges) {
+    final List<BadgeComponent> result = [];
+
+    for (final e in badges) {
+      final Map badge = Map.from(e);
+
+      result.add(
+        BadgeComponent(
+          src: badge['badgeImage'] ?? '',
+          text: badge['text'] ?? '',
+        ),
       );
-    }).toList();
+    }
+
+    return result;
   }
 
   // 16진수 색상 코드를 int로 변환
