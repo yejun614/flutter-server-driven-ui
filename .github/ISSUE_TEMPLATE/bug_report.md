@@ -1,38 +1,19 @@
 ---
-name: Bug report
-about: Create a report to help us improve
-title: ''
+name: 버그 신고
+about: 버그 수정 요청
+title: 'bug: 버그 및 상황을 간단히 작성'
 labels: ''
 assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+## 실행 환경
+운영체제, Flutter Doctor 결과와 같은 관련 실행 환경을 명시
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+## 버그 시나리오
+버그를 재현할 수 있는 방법을 설명
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
-
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
-
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
-
-**Additional context**
-Add any other context about the problem here.
+## 버그 심각성
+무관 : 프로그램 사용에 지장이 없는 경우(불편하지 않음, 사소한 버그)
+일반 : 프로그램 사용에 지장이 있으나 재시작 혹은 초기화로 해소되는 경우(약간의 불편함)
+심각 : 프로그램 사용에 지장이 있어 심각한 불편함을 초래하는 경우
