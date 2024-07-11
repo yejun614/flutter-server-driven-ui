@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_server_driven_ui/presentation/a_title/component/a_title_component.dart';
+import 'package:flutter_server_driven_ui/presentation/b_title/component/b_title_component.dart';
 import 'package:flutter_server_driven_ui/presentation/badge/component/badge_component.dart';
 import 'package:flutter_server_driven_ui/presentation/plus_title/component/plus_title_component.dart';
 import 'package:flutter_server_driven_ui/presentation/plus_title/model/plus_text_style.dart';
@@ -16,43 +18,13 @@ class TestScreen extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
         child: Column(
           children: [
-            const TitleComponent(
-              title: "Seamist Beach Cottage, Private Beach & Ocean Views",
-              badges: [
-                BadgeComponent(
-                  src:
-                      "https://cdn-icons-png.flaticon.com/512/13921/13921167.png",
-                  text: "4.79(99 reviews)",
-                ),
-              ],
-              description: "Bodega Bay, California, United States",
+            const ATitleComponent(
+              title: "This is A ViewType",
+              iconUrl:
+                  "https://avatars.githubusercontent.com/u/103282546?s=200&v=4",
             ),
-            const Divider(),
-            PlusTitleComponent(
-              firstRowImage: PlusTitleImage(
-                imgUrl:
-                    "https://cdn.pixabay.com/photo/2013/07/18/10/57/ribbon-163621_1280.jpg",
-                width: 120,
-                height: 30,
-              ),
-              titleText: PlusTitleText(
-                text: "Rancho Tranquillo Rustic ChicTent",
-                textSize: 30,
-                textColor: 0xFFFF0000, // NOTE: 0xAARRGGBB
-                textStyle: PlusTextStyle.bold, // NOTE: Bit masks
-              ),
-              badges: const [
-                BadgeComponent(
-                  src:
-                      "https://cdn-icons-png.flaticon.com/512/13921/13921167.png",
-                  text: "4.79(99 reviews)",
-                ),
-                BadgeComponent(
-                  src: "https://cdn-icons-png.flaticon.com/512/190/190811.png",
-                  text: "Superhost",
-                ),
-              ],
-              description: "San Juan Bautista, California, United States",
+            const BTitleComponent(
+              title: "This is B ViewType",
             ),
           ],
         ),
