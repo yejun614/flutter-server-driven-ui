@@ -1,7 +1,7 @@
 import 'package:flutter_server_driven_ui/presentation/server_driven/type/rich_text_view_type.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'screen_content.g.dart';
+part 'screen_content_v2.g.dart';
 
 @JsonSerializable()
 class ScreenContentV2 {
@@ -21,9 +21,9 @@ class ScreenContentV2 {
   });
 
   factory ScreenContentV2.fromJson(Map<String, dynamic> json) =>
-      _$ScreenContentFromJson(json);
+      _$ScreenContentV2FromJson(json);
 
-  Map<String, dynamic> toJson() => _$ScreenContentToJson(this);
+  Map<String, dynamic> toJson() => _$ScreenContentV2ToJson(this);
 
   static RichTextViewType _sectionComponentTypeFromJson(String name) {
     return RichTextViewType.fromName(name) ?? RichTextViewType.unknownViewType;
