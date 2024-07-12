@@ -1,0 +1,45 @@
+{
+    "screenName":"Home",
+    "contents" : [{
+            "id":"title_section",
+            "sectionComponentType":"TITLE",
+            "section": {
+                "type": "TitleSection",
+                "title": "Seamist Beach Cottage, Private Beach & Ocean Views",
+                "badges" : [
+                    {"badgeImage" : "https://icon.airbnb.com/startRating.png", "text": "4.79(99 reviews)"}
+                ],
+                "description":"Bodega Bay, California, United States"
+            }
+        },{
+            "id":"title_section",
+            "sectionComponentType":"PLUS_TITLE",
+            "section": {
+                "type": "PlusTitleSection",
+                "firstRowImage": {
+                    "imgUrl": "https://icon.airbnb.com/airbnbPlusMembership.png",
+                    "width":"40",
+                    "height":"25"
+                },
+                "titleText": {
+                    "text":"Rancho Tranquillo Rustic ChicTent",
+                    "textSize":"16",
+                    "textColor":"#FF0000",
+                    "textStyle":"bold | italic | strike"    
+                },
+                "badges" : [
+                    {
+                        "badgeImage" : "https://icon.airbnb.com/startRating.png",
+                        "text": "4.79(105 reviews)"
+                    },
+                    {
+                        "badgeImage" : "https://icon.airbnb.com/superHost.png",
+                        "text": "Superhost"
+                    }
+                ],
+                "description":"San Juan Bautista, California, United States"
+            }
+        }
+    ]
+}
+
