@@ -11,7 +11,11 @@ import 'package:flutter_server_driven_ui/presentation/server_driven/type/rich_te
 
 // 서버에서 받은 데이터를 화면에 표시할 수 있는 위젯으로 변환
 class ServerDrivenUIRichTextAdapter {
-  static const Map<String, int> _colors = {};
+  static const Map<String, int> _colors = {
+    "red": 0xFFFF0000,
+    "yellow": 0xFFFFFF00,
+    "black": 0xFF000000,
+  };
 
   List<Widget> convert(List<ScreenContentV2> contentList) {
     final List<Widget> serverDrivenWidgets = [];
