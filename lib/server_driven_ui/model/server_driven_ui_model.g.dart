@@ -9,23 +9,23 @@ part of 'server_driven_ui_model.dart';
 AViewTypeModel _$AViewTypeModelFromJson(Map<String, dynamic> json) =>
     AViewTypeModel(
       title: json['title'] as String? ?? '',
+      iconUrl: json['iconUrl'] as String? ?? '',
     );
 
 Map<String, dynamic> _$AViewTypeModelToJson(AViewTypeModel instance) =>
     <String, dynamic>{
       'title': instance.title,
+      'iconUrl': instance.iconUrl,
     };
 
 BViewTypeModel _$BViewTypeModelFromJson(Map<String, dynamic> json) =>
     BViewTypeModel(
       title: json['title'] as String? ?? '',
-      iconUrl: json['iconUrl'] as String? ?? '',
     );
 
 Map<String, dynamic> _$BViewTypeModelToJson(BViewTypeModel instance) =>
     <String, dynamic>{
       'title': instance.title,
-      'iconUrl': instance.iconUrl,
     };
 
 RichViewTypeModel _$RichViewTypeModelFromJson(Map<String, dynamic> json) =>

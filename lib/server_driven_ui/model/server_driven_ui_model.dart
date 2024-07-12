@@ -5,9 +5,11 @@ part 'server_driven_ui_model.g.dart';
 @JsonSerializable()
 class AViewTypeModel {
   final String title;
+  final String iconUrl;
 
   AViewTypeModel({
     this.title = '',
+    this.iconUrl = '',
   });
 
   factory AViewTypeModel.fromJson(Map<String, dynamic> json) =>
@@ -17,11 +19,9 @@ class AViewTypeModel {
 @JsonSerializable()
 class BViewTypeModel {
   final String title;
-  final String iconUrl;
 
   BViewTypeModel({
     this.title = '',
-    this.iconUrl = '',
   });
 
   factory BViewTypeModel.fromJson(Map<String, dynamic> json) =>
