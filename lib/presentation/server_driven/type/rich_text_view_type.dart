@@ -1,7 +1,7 @@
 enum RichTextViewType {
-  aViewType('A_VIEW_TYPE'),
-  bViewType('B_VIEW_TYPE'),
-  richViewType('RICH_VIEW_TYPE'),
+  aViewType('AViewType'),
+  bViewType('BViewType'),
+  richViewType('RichViewType'),
   unknownViewType('UNKNOWN_VIEW_TYPE');
 
   const RichTextViewType(this.name);

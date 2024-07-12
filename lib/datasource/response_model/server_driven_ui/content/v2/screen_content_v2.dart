@@ -6,7 +6,7 @@ part 'screen_content_v2.g.dart';
 @JsonSerializable()
 class ScreenContentV2 {
   @JsonKey(
-    name: 'sectionComponentType',
+    name: 'viewType',
     fromJson: _sectionComponentTypeFromJson,
     toJson: _sectionComponentTypeToJson,
   )
