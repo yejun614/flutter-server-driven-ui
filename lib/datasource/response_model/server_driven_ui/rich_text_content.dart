@@ -1,4 +1,4 @@
-import 'package:flutter_server_driven_ui/server_driven_ui/rich_text_view_type.dart';
+import 'package:flutter_server_driven_ui/presentation/server_driven/type/rich_text_view_type.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'rich_text_content.g.dart';

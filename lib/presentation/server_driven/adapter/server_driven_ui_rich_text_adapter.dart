@@ -1,4 +1,3 @@
-// 서버에서 받은 데이터를 화면에 표시할 수 있는 위젯으로 변환
 import 'package:flutter/material.dart';
 import 'package:flutter_server_driven_ui/datasource/response_model/server_driven_ui/rich_text_content.dart';
 import 'package:flutter_server_driven_ui/presentation/a_title/component/a_title_component.dart';
@@ -7,13 +6,14 @@ import 'package:flutter_server_driven_ui/presentation/rich/component/rich_compon
 import 'package:flutter_server_driven_ui/presentation/rich_image/component/rich_image_component.dart';
 import 'package:flutter_server_driven_ui/presentation/rich_text/component/rich_text_component.dart';
 import 'package:flutter_server_driven_ui/presentation/rich_text/model/rich_text_style.dart';
-import 'package:flutter_server_driven_ui/server_driven_ui/model/server_driven_ui_model.dart';
-import 'package:flutter_server_driven_ui/server_driven_ui/rich_text_view_type.dart';
-import 'package:flutter_server_driven_ui/server_driven_ui/use_cases/text2color.dart';
-import 'package:flutter_server_driven_ui/server_driven_ui/use_cases/text2text_style.dart';
+import 'package:flutter_server_driven_ui/presentation/server_driven/model/server_driven_ui_model.dart';
+import 'package:flutter_server_driven_ui/presentation/server_driven/type/rich_text_view_type.dart';
 
+// 서버에서 받은 데이터를 화면에 표시할 수 있는 위젯으로 변환
 class ServerDrivenUIRichTextAdapter {
-  static List<Widget> adapt(List<RichTextContent> contentList) {
+  static const Map<String, int> _colors = {};
+
+  List<Widget> convert(List<RichTextContent> contentList) {
     final List<Widget> serverDrivenWidgets = [];
 
     for (int index = 0; index < contentList.length; index++) {
@@ -41,7 +41,6 @@ class ServerDrivenUIRichTextAdapter {
 
         case RichTextViewType.richViewType:
           final richViewTypeModel = RichViewTypeModel.fromJson(content.content);
-          print(richViewTypeModel);
           serverDrivenWidgets.add(
             RichComponent(
               children: [
@@ -52,11 +51,11 @@ class ServerDrivenUIRichTextAdapter {
                     return RichTextComponent(
                       text: text.text,
                       fontSize: text.fontSize,
-                      background: Color(text2Color(text.background)),
-                      textColor: Color(text2Color(text.textColor)),
+                      background: Color(_toColor(text.background)),
+                      textColor: Color(_toColor(text.textColor)),
                       textStyle: RichTextStyle(
                         styles: text.textStyle
-                            .map((style) => text2TextStyle(style))
+                            .map((style) => _toTextStyle(style))
                             .toList(),
                       ),
                     );
@@ -68,8 +67,7 @@ class ServerDrivenUIRichTextAdapter {
                       height: image.height,
                     );
                   } else {
-                    print("Rich Text Parse Error");
-                    return RichTextComponent();
+                    throw Exception("Rich Text Parse Error");
                   }
                 }).toList())
               ],
@@ -78,11 +76,28 @@ class ServerDrivenUIRichTextAdapter {
           break;
 
         default:
-          print('Unknown RichTextViewType');
-          break;
+          throw Exception('Unknown RichTextViewType');
       }
     }
 
     return serverDrivenWidgets;
+  }
+
+  int _toColor(String text) {
+    return _colors[text] ?? 0x00000000;
+  }
+
+  int _toTextStyle(String text) {
+    if (text == "underline") {
+      return RichTextStyle.underline;
+    } else if (text == "bold") {
+      return RichTextStyle.bold;
+    } else if (text == "strike") {
+      return RichTextStyle.strike;
+    } else if (text == "italic") {
+      return RichTextStyle.italic;
+    } else {
+      return 0; // NULL
+    }
   }
 }
