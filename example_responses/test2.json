@@ -1,0 +1,49 @@
+{
+    "screenName": "Home",
+    "contents": [
+        {
+            "id": "title_section",
+            "sectionComponentType": "TITLE",
+            "section": {
+                "type": "TitleSection",
+                "title": "Seamist Beach Cottage, Private Beach & Ocean Views",
+                "badges": [
+                    {
+                        "badgeImage": "https://cdn-icons-png.flaticon.com/512/13921/13921167.png",
+                        "text": "4.79(99 reviews)"
+                    }
+                ],
+                "description": "Bodega Bay, California, United States"
+            }
+        },
+        {
+            "id": "title_section",
+            "sectionComponentType": "PLUS_TITLE",
+            "section": {
+                "type": "PlusTitleSection",
+                "firstRowImage": {
+                    "imgUrl": "https://cdn.pixabay.com/photo/2013/07/18/10/57/ribbon-163621_1280.jpg",
+                    "width": "120",
+                    "height": "30"
+                },
+                "titleText": {
+                    "text": "Rancho Tranquillo Rustic ChicTent",
+                    "textSize": "30",
+                    "textColor": "#FF0000",
+                    "textStyle": "bold"
+                },
+                "badges": [
+                    {
+                        "badgeImage": "https://cdn-icons-png.flaticon.com/512/13921/13921167.png",
+                        "text": "4.79(105 reviews)"
+                    },
+                    {
+                        "badgeImage": "https://cdn-icons-png.flaticon.com/512/190/190811.png",
+                        "text": "Superhost"
+                    }
+                ],
+                "description": "San Juan Bautista, California, United States"
+            }
+        }
+    ]
+}

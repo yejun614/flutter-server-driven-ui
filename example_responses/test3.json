@@ -1,0 +1,70 @@
+{
+    "responseData" : {
+      "screenName":"Home",
+      "contents" : [
+        {
+          "viewType" : "BViewType",
+          "content" : {
+            "title": "This is B ViewType"
+          }
+        },
+        {
+          "viewType" : "AViewType",
+          "content" : {
+            "title": "This is A ViewType",
+            "iconUrl":"https://avatars.githubusercontent.com/u/103282546?s=200&v=4"
+          }
+        },
+        {
+          "viewType" : "RichViewType",
+          "content" : {
+                "title": "This is RichText ViewType",
+                "richText": [ 
+                    {
+                    "text": {
+                        "text": "이것은",
+                        "fontSize": 14
+                        }
+                    },
+                    {
+                    "text": {
+                        "text": "새로운",
+                        "fontSize": 16
+                        }
+                    },
+                    {
+                    "text": {
+                        "text": "Rich Text",
+                        "background": "yellow",
+                        "fontSize": 24
+                        }
+                    },
+                    {
+                    "text": {
+                        "text": "ViewType",
+                        "textColor": "red",
+                        "fontSize": 30
+                        }
+                    },
+                    {
+                    "text": {
+                        "text": "어떻게 구현할수 있을까요?",
+                        "textStyle": [
+                            "underline"
+                        ],
+                        "textSize": 24
+                    }
+                    },
+                    {
+                        "image": {
+                            "url": "https://img.icons8.com/?size=512&id=63684&format=png",
+                            "width": 24,
+                            "height": 24
+                        }
+                    }
+                ]
+            }   
+        }
+      ]
+    }
+}
