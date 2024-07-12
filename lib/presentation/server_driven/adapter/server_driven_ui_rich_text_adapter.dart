@@ -54,9 +54,7 @@ class ServerDrivenUIRichTextAdapter {
                       background: Color(_toColor(text.background)),
                       textColor: Color(_toColor(text.textColor)),
                       textStyle: RichTextStyle(
-                        styles: text.textStyle
-                            .map((style) => _toTextStyle(style))
-                            .toList(),
+                        styles: [_toTextStyle(text.textStyle)],
                       ),
                     );
                   } else if (item.image != null) {

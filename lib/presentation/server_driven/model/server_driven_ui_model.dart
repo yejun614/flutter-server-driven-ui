@@ -62,17 +62,16 @@ class RichTextTextModel {
   final double fontSize;
   final String background;
   final String textColor;
-  final List<String> textStyle;
+  final String textStyle;
 
   RichTextTextModel({
     this.text = '',
     double? fontSize,
     this.background = 'white',
     this.textColor = 'black',
-    List<String>? textStyle,
+    this.textStyle = 'normal',
     double textSize = 12.0,
-  })  : fontSize = fontSize ?? textSize,
-        textStyle = textStyle ?? [];
+  }) : fontSize = fontSize ?? textSize;
 
   factory RichTextTextModel.fromJson(Map<String, dynamic> json) =>
       _$RichTextTextModelFromJson(json);

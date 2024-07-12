@@ -67,9 +67,7 @@ RichTextTextModel _$RichTextTextModelFromJson(Map<String, dynamic> json) =>
       fontSize: (json['fontSize'] as num?)?.toDouble(),
       background: json['background'] as String? ?? 'white',
       textColor: json['textColor'] as String? ?? 'black',
-      textStyle: (json['textStyle'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
+      textStyle: json['textStyle'] as String? ?? 'normal',
     );
 
 Map<String, dynamic> _$RichTextTextModelToJson(RichTextTextModel instance) =>
