@@ -13,6 +13,7 @@ class AdapterController {
 
   List<Widget> convert(dynamic contentList) {
     // TODO: 구현 필요
+    throw Exception("error");
     return [];
   }
 }

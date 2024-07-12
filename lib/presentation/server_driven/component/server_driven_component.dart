@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_server_driven_ui/presentation/error/component/error_component.dart';
 import 'package:flutter_server_driven_ui/presentation/server_driven/component/server_driven_viewmodel.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -21,8 +22,10 @@ class ServerDrivenComponent extends HookConsumerWidget {
       return null;
     }, []);
 
-    return Column(
-      children: viewModel.children,
-    );
+    return viewModel.error != null
+        ? ErrorComponent(message: viewModel.error!)
+        : Column(
+            children: viewModel.children,
+          );
   }
 }

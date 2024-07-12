@@ -17,8 +17,13 @@ class ServerDrivenViewModel extends _$ServerDrivenViewModel {
   }
 
   void setUrl(String url) async {
-    final response = await _repository.getAccommodationInformation(url);
-    state.children = _adaptor.convert(response.contentList);
+    try {
+      final response = await _repository.getAccommodationInformation(url);
+      state.children = _adaptor.convert(response.contentList);
+    } catch (error) {
+      state.children = [];
+      state.error = error.toString();
+    }
     state = ServerDrivenState.clone(state);
   }
 }
