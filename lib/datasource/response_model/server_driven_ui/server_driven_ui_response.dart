@@ -1,10 +1,14 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:flutter_server_driven_ui/datasource/response_model/server_driven_ui/screen_content.dart';
 
-const _screenName = 'screenName';
-const _contents = 'contents';
+part 'server_driven_ui_response.g.dart';
 
+@JsonSerializable()
 class ServerDrivenUIResponse {
+  @JsonKey(name: 'screenName')
   final String screenName;
+
+  @JsonKey(name: 'contents')
   final List<ScreenContent> contentList;
 
   ServerDrivenUIResponse({
@@ -12,19 +16,8 @@ class ServerDrivenUIResponse {
     required this.contentList,
   });
 
-  static fromJson(Map<String, dynamic> json) {
-    final screenName =
-        json.containsKey(_screenName) ? json[_screenName] as String : '';
-    final contents =
-        json.containsKey(_contents) ? json[_contents] as List<dynamic> : [];
+  factory ServerDrivenUIResponse.fromJson(Map<String, dynamic> json) =>
+      _$ServerDrivenUIResponseFromJson(json);
 
-    List<ScreenContent> contentList = contents.map<ScreenContent>((element) {
-      return ScreenContent.fromJson(element as Map<String, dynamic>);
-    }).toList();
-
-    return ServerDrivenUIResponse(
-      screenName: screenName,
-      contentList: contentList,
-    );
-  }
+  Map<String, dynamic> toJson() => _$ServerDrivenUIResponseToJson(this);
 }
