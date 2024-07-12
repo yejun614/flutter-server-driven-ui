@@ -6,7 +6,7 @@ import 'package:flutter_server_driven_ui/presentation/plus_title/model/plus_text
 import 'package:flutter_server_driven_ui/presentation/plus_title/model/plus_title_image.dart';
 import 'package:flutter_server_driven_ui/presentation/plus_title/model/plus_title_text.dart';
 import 'package:flutter_server_driven_ui/presentation/title/component/title_component.dart';
-import 'package:flutter_server_driven_ui/server_driven_ui/section_component_type.dart';
+import 'package:flutter_server_driven_ui/presentation/server_driven/type/section_component_type.dart';
 
 // 서버에서 받은 데이터를 화면에 표시할 수 있는 위젯으로 변환
 class ServerDrivenUIAdapter {

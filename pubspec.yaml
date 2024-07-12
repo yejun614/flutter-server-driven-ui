@@ -1,12 +1,11 @@
 name: flutter_server_driven_ui
 description: "Server Driven UI for Flutter"
-publish_to: 'none'
-
+publish_to: "none"
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.4.3 <4.0.0'
+  sdk: ">=3.4.3 <4.0.0"
 
 dependencies:
   flutter:
@@ -39,7 +38,6 @@ dev_dependencies:
   json_serializable: ^6.8.0
 
 flutter:
-
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
