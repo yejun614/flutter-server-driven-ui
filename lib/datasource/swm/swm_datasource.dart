@@ -14,7 +14,7 @@ class SwmDataSourceImpl implements SwmDataSource {
 
     if (response.statusCode == HttpStatus.ok) {
       final body = jsonDecode(response.body);
-      return ServerDrivenUIV2Response.fromJson(body);
+      return ServerDrivenUIV2RootResponse.fromJson(body).responseData;
     } else {
       throw Exception('$url 응답 오류: ${response.statusCode}');
     }
