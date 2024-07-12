@@ -12,7 +12,6 @@ class AdapterController {
     _defaultAdapter = ServerDrivenUIAdapter();
     _richTextAdapter = ServerDrivenUIRichTextAdapter();
   }
-
   List<Widget> convert(List<dynamic> contentList) {
     if (contentList is List<ScreenContent>) {
       return _defaultAdapter.convert(contentList);
