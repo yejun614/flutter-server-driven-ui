@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_server_driven_ui/datasource/response_model/server_driven_ui/screen_content.dart';
+import 'package:flutter_server_driven_ui/datasource/response_model/server_driven_ui/content/v1/screen_content_v1.dart';
 import 'package:flutter_server_driven_ui/presentation/badge/component/badge_component.dart';
 import 'package:flutter_server_driven_ui/presentation/plus_title/component/plus_title_component.dart';
 import 'package:flutter_server_driven_ui/presentation/plus_title/model/plus_text_style.dart';

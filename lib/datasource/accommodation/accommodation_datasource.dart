@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
-import 'package:flutter_server_driven_ui/datasource/response_model/server_driven_ui/server_driven_ui_response.dart';
+import 'package:flutter_server_driven_ui/datasource/response_model/server_driven_ui/response/v1/server_driven_ui_response_v1.dart';
 
 abstract class AccommodationDataSource {
   Future<ServerDrivenUIResponse> getAccommodationInformation(String url);

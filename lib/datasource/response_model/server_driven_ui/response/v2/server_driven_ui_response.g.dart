@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'server_driven_ui_response.dart';
+part of 'server_driven_ui_response_v2.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

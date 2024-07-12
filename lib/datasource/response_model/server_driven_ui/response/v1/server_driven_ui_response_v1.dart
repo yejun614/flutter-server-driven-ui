@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:flutter_server_driven_ui/datasource/response_model/server_driven_ui/screen_content.dart';
+import 'package:flutter_server_driven_ui/datasource/response_model/server_driven_ui/content/v1/screen_content_v1.dart';
 
 part 'server_driven_ui_response.g.dart';
 
