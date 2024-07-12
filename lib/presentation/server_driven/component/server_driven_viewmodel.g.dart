@@ -7,7 +7,7 @@ part of 'server_driven_viewmodel.dart';
 // **************************************************************************
 
 String _$serverDrivenViewModelHash() =>
-    r'4883fa7e0a0500a40ad6a43fe82b514e708d0d5c';
+    r'12d4b46b2767ef5db141dc00c442d68b747b1edb';
 
 /// See also [ServerDrivenViewModel].
 @ProviderFor(ServerDrivenViewModel)

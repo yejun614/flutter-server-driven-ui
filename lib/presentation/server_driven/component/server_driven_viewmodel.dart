@@ -27,7 +27,7 @@ class ServerDrivenViewModel extends _$ServerDrivenViewModel {
         final response = await _repositoryV2.getSwmInformation(url);
         state.children = _adaptor.convert(response.contentList);
       } catch (error) {
-        // TODO:
+        state.error = error.toString();
       }
     } finally {
       state = ServerDrivenState.clone(state);
