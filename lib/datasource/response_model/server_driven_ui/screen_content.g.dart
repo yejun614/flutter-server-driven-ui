@@ -8,7 +8,7 @@ part of 'screen_content.dart';
 
 ScreenContent _$ScreenContentFromJson(Map<String, dynamic> json) =>
     ScreenContent(
-      id: json['id'] as String,
+      id: json['id'] as String? ?? '',
       sectionComponentType: ScreenContent._sectionComponentTypeFromJson(
           json['sectionComponentType'] as String),
       section: json['section'] as Map<String, dynamic>,

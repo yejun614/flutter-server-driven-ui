@@ -5,7 +5,7 @@ part 'screen_content.g.dart';
 
 @JsonSerializable()
 class ScreenContent {
-  @JsonKey(name: 'id')
+  @JsonKey(name: 'id', required: false, defaultValue: '')
   final String id;
 
   @JsonKey(
@@ -31,7 +31,7 @@ class ScreenContent {
 
   static SectionComponentType _sectionComponentTypeFromJson(String name) {
     final type = SectionComponentType.fromName(name);
-    
+
     if (type == null) {
       throw FormatException('잘못된 sectionComponentType 입니다 : $name');
     }
