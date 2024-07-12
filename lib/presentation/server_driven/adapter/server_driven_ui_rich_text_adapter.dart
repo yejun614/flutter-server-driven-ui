@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_server_driven_ui/datasource/response_model/server_driven_ui/rich_text_content.dart';
+import 'package:flutter_server_driven_ui/datasource/response_model/server_driven_ui/content/v2/screen_content_v2.dart';
 import 'package:flutter_server_driven_ui/presentation/a_title/component/a_title_component.dart';
 import 'package:flutter_server_driven_ui/presentation/b_title/component/b_title_component.dart';
 import 'package:flutter_server_driven_ui/presentation/rich/component/rich_component.dart';
@@ -13,13 +13,13 @@ import 'package:flutter_server_driven_ui/presentation/server_driven/type/rich_te
 class ServerDrivenUIRichTextAdapter {
   static const Map<String, int> _colors = {};
 
-  List<Widget> convert(List<RichTextContent> contentList) {
+  List<Widget> convert(List<ScreenContentV2> contentList) {
     final List<Widget> serverDrivenWidgets = [];
 
     for (int index = 0; index < contentList.length; index++) {
       final content = contentList[index];
 
-      switch (content.viewType) {
+      switch (content.richTextViewType) {
         case RichTextViewType.aViewType:
           final aViewTypeModel = AViewTypeModel.fromJson(content.content);
           serverDrivenWidgets.add(
