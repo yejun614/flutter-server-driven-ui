@@ -6,9 +6,9 @@ part of 'server_driven_ui_response_v2.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ServerDrivenUIResponse _$ServerDrivenUIResponseFromJson(
+ServerDrivenUIV2Response _$ServerDrivenUIResponseFromJson(
         Map<String, dynamic> json) =>
-    ServerDrivenUIResponse(
+    ServerDrivenUIV2Response(
       screenName: json['screenName'] as String,
       contentList: (json['contents'] as List<dynamic>)
           .map((e) => ScreenContent.fromJson(e as Map<String, dynamic>))
@@ -16,7 +16,7 @@ ServerDrivenUIResponse _$ServerDrivenUIResponseFromJson(
     );
 
 Map<String, dynamic> _$ServerDrivenUIResponseToJson(
-        ServerDrivenUIResponse instance) =>
+        ServerDrivenUIV2Response instance) =>
     <String, dynamic>{
       'screenName': instance.screenName,
       'contents': instance.contentList,

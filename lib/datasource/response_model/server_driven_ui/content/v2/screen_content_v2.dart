@@ -1,5 +1,5 @@
+import 'package:flutter_server_driven_ui/presentation/server_driven/type/rich_text_view_type.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:flutter_server_driven_ui/server_driven_ui/section_component_type.dart';
 
 part 'screen_content.g.dart';
 
@@ -10,15 +10,14 @@ class ScreenContentV2 {
     fromJson: _sectionComponentTypeFromJson,
     toJson: _sectionComponentTypeToJson,
   )
-  final SectionComponentType sectionComponentType;
+  final RichTextViewType richTextViewType;
 
-  @JsonKey(name: 'section')
-  final Map<String, dynamic> section;
+  @JsonKey(name: 'content')
+  final Map<String, dynamic> content;
 
   ScreenContentV2({
-    required this.id,
-    required this.sectionComponentType,
-    required this.section,
+    required this.richTextViewType,
+    required this.content,
   });
 
   factory ScreenContentV2.fromJson(Map<String, dynamic> json) =>
@@ -26,15 +25,11 @@ class ScreenContentV2 {
 
   Map<String, dynamic> toJson() => _$ScreenContentToJson(this);
 
-  static SectionComponentType _sectionComponentTypeFromJson(String name) {
-    final type = SectionComponentType.fromName(name);
-
-    if (type == null) {
-      throw FormatException('잘못된 sectionComponentType 입니다 : $name');
-    }
-    return type;
+  static RichTextViewType _sectionComponentTypeFromJson(String name) {
+    return RichTextViewType.fromName(name) ?? RichTextViewType.unknownViewType;
   }
 
-  static String _sectionComponentTypeToJson(SectionComponentType type) =>
-      type.name;
+  static String _sectionComponentTypeToJson(RichTextViewType type) {
+    return type.name;
+  }
 }

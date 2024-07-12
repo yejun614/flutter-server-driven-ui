@@ -18,6 +18,6 @@ Map<String, dynamic> _$ScreenContentToJson(ScreenContentV2 instance) =>
     <String, dynamic>{
       'id': instance.id,
       'sectionComponentType': ScreenContentV2._sectionComponentTypeToJson(
-          instance.sectionComponentType),
-      'section': instance.section,
+          instance.richTextViewType),
+      'section': instance.content,
     };

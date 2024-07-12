@@ -1,5 +1,5 @@
+import 'package:flutter_server_driven_ui/presentation/server_driven/type/section_component_type.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:flutter_server_driven_ui/server_driven_ui/section_component_type.dart';
 
 part 'screen_content.g.dart';
 
