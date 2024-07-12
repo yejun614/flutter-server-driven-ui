@@ -1,21 +1,12 @@
-import 'package:json_annotation/json_annotation.dart';
-import 'package:flutter_server_driven_ui/server_driven_ui/section_component_type.dart';
+import 'package:flutter_server_driven_ui/presentation/server_driven/type/section_component_type.dart';
 
-part 'screen_content.g.dart';
+const _id = 'id';
+const _sectionComponentType = 'sectionComponentType';
+const _section = 'section';
 
-@JsonSerializable()
 class ScreenContent {
-  @JsonKey(name: 'id', required: false, defaultValue: '')
   final String id;
-
-  @JsonKey(
-    name: 'sectionComponentType',
-    fromJson: _sectionComponentTypeFromJson,
-    toJson: _sectionComponentTypeToJson,
-  )
   final SectionComponentType sectionComponentType;
-
-  @JsonKey(name: 'section')
   final Map<String, dynamic> section;
 
   ScreenContent({
@@ -24,20 +15,24 @@ class ScreenContent {
     required this.section,
   });
 
-  factory ScreenContent.fromJson(Map<String, dynamic> json) =>
-      _$ScreenContentFromJson(json);
+  static ScreenContent fromJson(Map<String, dynamic> json) {
+    final String id = json[_id] as String;
+    final String sectionComponentTypeName =
+        json[_sectionComponentType] as String;
+    final SectionComponentType? sectionComponentType =
+        SectionComponentType.fromName(sectionComponentTypeName);
 
-  Map<String, dynamic> toJson() => _$ScreenContentToJson(this);
-
-  static SectionComponentType _sectionComponentTypeFromJson(String name) {
-    final type = SectionComponentType.fromName(name);
-
-    if (type == null) {
-      throw FormatException('잘못된 sectionComponentType 입니다 : $name');
+    if (sectionComponentType == null) {
+      throw FormatException(
+          '잘못된 sectionComponentType 입니다 : $sectionComponentTypeName');
     }
-    return type;
-  }
 
-  static String _sectionComponentTypeToJson(SectionComponentType type) =>
-      type.name;
+    final Map<String, dynamic> section = json[_section] as Map<String, dynamic>;
+
+    return ScreenContent(
+      id: id,
+      sectionComponentType: sectionComponentType,
+      section: section,
+    );
+  }
 }
